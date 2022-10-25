@@ -21,8 +21,8 @@ Instruction to try it on own machine
 2. https://www.yiiframework.com/doc/guide/1.1/en/quickstart.apache-nginx-config
 3. Clone this project by git clone https://github.com/Nexider321/Yii2project.git
 4. you need to create db 
-`CREATE DATABASE `yii2advanced`
-    DEFAULT CHARACTER SET = 'utf8mb4';`
+CREATE DATABASE `yii2advanced`
+    DEFAULT CHARACTER SET = 'utf8mb4';
  in project you need connect to db settings in common/config/main-local.php you can change username or password if you need
 4. In project folder you need to type php init and select 0 and yes
 5. `Composer install` `php yii migrate/up` type yes
