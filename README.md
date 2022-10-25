@@ -24,7 +24,7 @@ Instruction to try it on own machine
 CREATE DATABASE `yii2advanced`
     DEFAULT CHARACTER SET = 'utf8mb4';
  in project you need connect to db settings in common/config/main-local.php you can change username or password if you need
-4. In project folder you need to type php init and select 0 and yes
+4. In project folder you need to type php init and select 1 and yes
 5. `Composer install` `php yii migrate/up` type yes
 6. Check adress [localhost/http://localhost/Yii2project/frontend/web/](http://localhost/Yii2project/frontend/web/)
 
