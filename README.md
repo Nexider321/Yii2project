@@ -7,8 +7,7 @@
 </p>
 
 Yii 2 Pet Project System accounting system
-[Yii 2](http://www.yiiframework.com/) application best for
-developing complex Web applications with multiple tiers.
+
 
 Main Code in folder Frontend
 
