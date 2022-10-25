@@ -1,0 +1,513 @@
+2022-10-23 18:58:40 [::1][-][iek2v6rkvpu0stshoeijvgu9li][error][yii\base\InvalidConfigException] yii\base\InvalidConfigException: The table does not exist: {{%user}} in /var/www/html/Managment/vendor/yiisoft/yii2/db/ActiveRecord.php:442
+Stack trace:
+#0 /var/www/html/Managment/vendor/yiisoft/yii2/db/ActiveRecord.php(266): yii\db\ActiveRecord::getTableSchema()
+#1 /var/www/html/Managment/vendor/yiisoft/yii2/db/ActiveRecord.php(238): yii\db\ActiveRecord::filterValidColumnNames()
+#2 /var/www/html/Managment/vendor/yiisoft/yii2/db/ActiveRecord.php(195): yii\db\ActiveRecord::filterCondition()
+#3 /var/www/html/Managment/vendor/yiisoft/yii2/db/BaseActiveRecord.php(110): yii\db\ActiveRecord::findByCondition()
+#4 /var/www/html/Managment/common/models/User.php(67): yii\db\BaseActiveRecord::findOne()
+#5 /var/www/html/Managment/vendor/yiisoft/yii2/web/User.php(698): common\models\User::findIdentity()
+#6 /var/www/html/Managment/vendor/yiisoft/yii2/web/User.php(199): yii\web\User->renewAuthStatus()
+#7 /var/www/html/Managment/vendor/yiisoft/yii2/web/User.php(367): yii\web\User->getIdentity()
+#8 /var/www/html/Managment/vendor/yiisoft/yii2/base/Component.php(139): yii\web\User->getIsGuest()
+#9 /var/www/html/Managment/vendor/yiisoft/yii2-debug/src/panels/UserPanel.php(83): yii\base\Component->__get()
+#10 /var/www/html/Managment/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#11 [internal function]: yii\base\BaseObject->__construct()
+#12 /var/www/html/Managment/vendor/yiisoft/yii2/di/Container.php(419): ReflectionClass->newInstanceArgs()
+#13 /var/www/html/Managment/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build()
+#14 /var/www/html/Managment/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get()
+#15 /var/www/html/Managment/vendor/yiisoft/yii2-debug/src/Module.php(253): yii\BaseYii::createObject()
+#16 /var/www/html/Managment/vendor/yiisoft/yii2-debug/src/Module.php(225): yii\debug\Module->initPanels()
+#17 /var/www/html/Managment/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\debug\Module->init()
+#18 /var/www/html/Managment/vendor/yiisoft/yii2/base/Module.php(161): yii\base\BaseObject->__construct()
+#19 [internal function]: yii\base\Module->__construct()
+#20 /var/www/html/Managment/vendor/yiisoft/yii2/di/Container.php(411): ReflectionClass->newInstanceArgs()
+#21 /var/www/html/Managment/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build()
+#22 /var/www/html/Managment/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get()
+#23 /var/www/html/Managment/vendor/yiisoft/yii2/base/Module.php(445): yii\BaseYii::createObject()
+#24 /var/www/html/Managment/vendor/yiisoft/yii2/base/Application.php(313): yii\base\Module->getModule()
+#25 /var/www/html/Managment/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#26 /var/www/html/Managment/vendor/yiisoft/yii2/base/Application.php(271): yii\web\Application->bootstrap()
+#27 /var/www/html/Managment/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\base\Application->init()
+#28 /var/www/html/Managment/vendor/yiisoft/yii2/base/Application.php(204): yii\base\BaseObject->__construct()
+#29 /var/www/html/Managment/backend/web/index.php(18): yii\base\Application->__construct()
+#30 {main}
+2022-10-23 18:58:40 [::1][-][iek2v6rkvpu0stshoeijvgu9li][info][application] $_GET = [
+    'r' => 'gii/default/view'
+    'id' => 'model'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'agree' => '373c6dbf02c370d830160c4dc9e4e84d6a2e82f50d71b3c400dc69dfb9a5aec6a:2:{i:0;s:5:\"agree\";i:1;s:2:\"on\";}'
+    '_identity-frontend' => '76f35adfd847ef7ffe93eac5e971aece99c0e604a01ebf647421c55cdbdbd6b8a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[4,\"Ppcg7JD-B0Pdfk2XuWDp7qU_WK2VExi4\",2592000]\";}'
+    'advanced-frontend' => 'am8083amk9b7khkq4nf7t8jn0r'
+    '_identity-backend' => '9969be0f702f40824c75078d6c7e75918cd25a0116b2da06f1786a96e62d9a37a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[4,\"Ppcg7JD-B0Pdfk2XuWDp7qU_WK2VExi4\",2592000]\";}'
+    'PHPSESSID' => 'dfo59oftnhdk1euc8nmhbhfnmj'
+    '_identity' => 'af4c8690e28834ef0f9a5a7dc9c3e886c02c95703d2cf83065b73e4b679e0a80a:2:{i:0;s:9:\"_identity\";i:1;s:28:\"[\"100\",\"test100key\",2592000]\";}'
+    '_csrf' => 'd65c57e0d4241c949775c06995d385a05983d771e5fb418bbe6fb8abd81f7c57a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"kpsA86nu7wIr-_p0CjJmKbpb4geb0Y3b\";}'
+    '_csrf-frontend' => 'a459a6f4a197de847720ef2452f6998d135fae3863a8e015c23cf22f72898b80a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"w6-CtsMlOe5lF2tuvch26lbosvqUd-xi\";}'
+    'advanced-backend' => 'iek2v6rkvpu0stshoeijvgu9li'
+    '_csrf-backend' => '99cc096957d681c0923fb5fd438d6b6c226e64fd637bef33681e895ecfba9b6fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"QedcLh90zpy_GdfSrg9M8wHmKegZ2JuS\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 4
+    '__authKey' => 'Ppcg7JD-B0Pdfk2XuWDp7qU_WK2VExi4'
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'SCRIPT_NAME' => '/Managment/backend/web/index.php'
+    'REQUEST_URI' => '/Managment/backend/web/index.php?r=gii%2Fdefault%2Fview&id=model'
+    'QUERY_STRING' => 'r=gii%2Fdefault%2Fview&id=model'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '56856'
+    'SCRIPT_FILENAME' => '/var/www/html/Managment/backend/web/index.php'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html/'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => '/var/www/html/'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.52 (Ubuntu)'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.52 (Ubuntu) Server at localhost Port 80</address>
+'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'HTTP_COOKIE' => 'agree=373c6dbf02c370d830160c4dc9e4e84d6a2e82f50d71b3c400dc69dfb9a5aec6a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22agree%22%3Bi%3A1%3Bs%3A2%3A%22on%22%3B%7D; _identity-frontend=76f35adfd847ef7ffe93eac5e971aece99c0e604a01ebf647421c55cdbdbd6b8a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B4%2C%22Ppcg7JD-B0Pdfk2XuWDp7qU_WK2VExi4%22%2C2592000%5D%22%3B%7D; advanced-frontend=am8083amk9b7khkq4nf7t8jn0r; _identity-backend=9969be0f702f40824c75078d6c7e75918cd25a0116b2da06f1786a96e62d9a37a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B4%2C%22Ppcg7JD-B0Pdfk2XuWDp7qU_WK2VExi4%22%2C2592000%5D%22%3B%7D; PHPSESSID=dfo59oftnhdk1euc8nmhbhfnmj; _identity=af4c8690e28834ef0f9a5a7dc9c3e886c02c95703d2cf83065b73e4b679e0a80a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A28%3A%22%5B%22100%22%2C%22test100key%22%2C2592000%5D%22%3B%7D; _csrf=d65c57e0d4241c949775c06995d385a05983d771e5fb418bbe6fb8abd81f7c57a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22kpsA86nu7wIr-_p0CjJmKbpb4geb0Y3b%22%3B%7D; _csrf-frontend=a459a6f4a197de847720ef2452f6998d135fae3863a8e015c23cf22f72898b80a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22w6-CtsMlOe5lF2tuvch26lbosvqUd-xi%22%3B%7D; advanced-backend=iek2v6rkvpu0stshoeijvgu9li; _csrf-backend=99cc096957d681c0923fb5fd438d6b6c226e64fd637bef33681e895ecfba9b6fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22QedcLh90zpy_GdfSrg9M8wHmKegZ2JuS%22%3B%7D'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_REFERER' => 'http://localhost/Managment/backend/web/?r=gii'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'proxy-nokeepalive' => '1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/Managment/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1666551520.4299
+    'REQUEST_TIME' => 1666551520
+]
+2022-10-23 18:58:43 [::1][-][iek2v6rkvpu0stshoeijvgu9li][error][yii\base\InvalidConfigException] yii\base\InvalidConfigException: The table does not exist: {{%user}} in /var/www/html/Managment/vendor/yiisoft/yii2/db/ActiveRecord.php:442
+Stack trace:
+#0 /var/www/html/Managment/vendor/yiisoft/yii2/db/ActiveRecord.php(266): yii\db\ActiveRecord::getTableSchema()
+#1 /var/www/html/Managment/vendor/yiisoft/yii2/db/ActiveRecord.php(238): yii\db\ActiveRecord::filterValidColumnNames()
+#2 /var/www/html/Managment/vendor/yiisoft/yii2/db/ActiveRecord.php(195): yii\db\ActiveRecord::filterCondition()
+#3 /var/www/html/Managment/vendor/yiisoft/yii2/db/BaseActiveRecord.php(110): yii\db\ActiveRecord::findByCondition()
+#4 /var/www/html/Managment/common/models/User.php(67): yii\db\BaseActiveRecord::findOne()
+#5 /var/www/html/Managment/vendor/yiisoft/yii2/web/User.php(698): common\models\User::findIdentity()
+#6 /var/www/html/Managment/vendor/yiisoft/yii2/web/User.php(199): yii\web\User->renewAuthStatus()
+#7 /var/www/html/Managment/vendor/yiisoft/yii2/web/User.php(367): yii\web\User->getIdentity()
+#8 /var/www/html/Managment/vendor/yiisoft/yii2/base/Component.php(139): yii\web\User->getIsGuest()
+#9 /var/www/html/Managment/vendor/yiisoft/yii2-debug/src/panels/UserPanel.php(83): yii\base\Component->__get()
+#10 /var/www/html/Managment/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#11 [internal function]: yii\base\BaseObject->__construct()
+#12 /var/www/html/Managment/vendor/yiisoft/yii2/di/Container.php(419): ReflectionClass->newInstanceArgs()
+#13 /var/www/html/Managment/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build()
+#14 /var/www/html/Managment/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get()
+#15 /var/www/html/Managment/vendor/yiisoft/yii2-debug/src/Module.php(253): yii\BaseYii::createObject()
+#16 /var/www/html/Managment/vendor/yiisoft/yii2-debug/src/Module.php(225): yii\debug\Module->initPanels()
+#17 /var/www/html/Managment/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\debug\Module->init()
+#18 /var/www/html/Managment/vendor/yiisoft/yii2/base/Module.php(161): yii\base\BaseObject->__construct()
+#19 [internal function]: yii\base\Module->__construct()
+#20 /var/www/html/Managment/vendor/yiisoft/yii2/di/Container.php(411): ReflectionClass->newInstanceArgs()
+#21 /var/www/html/Managment/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build()
+#22 /var/www/html/Managment/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get()
+#23 /var/www/html/Managment/vendor/yiisoft/yii2/base/Module.php(445): yii\BaseYii::createObject()
+#24 /var/www/html/Managment/vendor/yiisoft/yii2/base/Application.php(313): yii\base\Module->getModule()
+#25 /var/www/html/Managment/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#26 /var/www/html/Managment/vendor/yiisoft/yii2/base/Application.php(271): yii\web\Application->bootstrap()
+#27 /var/www/html/Managment/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\base\Application->init()
+#28 /var/www/html/Managment/vendor/yiisoft/yii2/base/Application.php(204): yii\base\BaseObject->__construct()
+#29 /var/www/html/Managment/backend/web/index.php(18): yii\base\Application->__construct()
+#30 {main}
+2022-10-23 18:58:43 [::1][-][iek2v6rkvpu0stshoeijvgu9li][info][application] $_GET = [
+    'r' => 'gii'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'agree' => '373c6dbf02c370d830160c4dc9e4e84d6a2e82f50d71b3c400dc69dfb9a5aec6a:2:{i:0;s:5:\"agree\";i:1;s:2:\"on\";}'
+    '_identity-frontend' => '76f35adfd847ef7ffe93eac5e971aece99c0e604a01ebf647421c55cdbdbd6b8a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[4,\"Ppcg7JD-B0Pdfk2XuWDp7qU_WK2VExi4\",2592000]\";}'
+    'advanced-frontend' => 'am8083amk9b7khkq4nf7t8jn0r'
+    '_identity-backend' => '9969be0f702f40824c75078d6c7e75918cd25a0116b2da06f1786a96e62d9a37a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[4,\"Ppcg7JD-B0Pdfk2XuWDp7qU_WK2VExi4\",2592000]\";}'
+    'PHPSESSID' => 'dfo59oftnhdk1euc8nmhbhfnmj'
+    '_identity' => 'af4c8690e28834ef0f9a5a7dc9c3e886c02c95703d2cf83065b73e4b679e0a80a:2:{i:0;s:9:\"_identity\";i:1;s:28:\"[\"100\",\"test100key\",2592000]\";}'
+    '_csrf' => 'd65c57e0d4241c949775c06995d385a05983d771e5fb418bbe6fb8abd81f7c57a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"kpsA86nu7wIr-_p0CjJmKbpb4geb0Y3b\";}'
+    '_csrf-frontend' => 'a459a6f4a197de847720ef2452f6998d135fae3863a8e015c23cf22f72898b80a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"w6-CtsMlOe5lF2tuvch26lbosvqUd-xi\";}'
+    'advanced-backend' => 'iek2v6rkvpu0stshoeijvgu9li'
+    '_csrf-backend' => '99cc096957d681c0923fb5fd438d6b6c226e64fd637bef33681e895ecfba9b6fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"QedcLh90zpy_GdfSrg9M8wHmKegZ2JuS\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 4
+    '__authKey' => 'Ppcg7JD-B0Pdfk2XuWDp7qU_WK2VExi4'
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'SCRIPT_NAME' => '/Managment/backend/web/index.php'
+    'REQUEST_URI' => '/Managment/backend/web/?r=gii'
+    'QUERY_STRING' => 'r=gii'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '56858'
+    'SCRIPT_FILENAME' => '/var/www/html/Managment/backend/web/index.php'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html/'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => '/var/www/html/'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.52 (Ubuntu)'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.52 (Ubuntu) Server at localhost Port 80</address>
+'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'HTTP_COOKIE' => 'agree=373c6dbf02c370d830160c4dc9e4e84d6a2e82f50d71b3c400dc69dfb9a5aec6a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22agree%22%3Bi%3A1%3Bs%3A2%3A%22on%22%3B%7D; _identity-frontend=76f35adfd847ef7ffe93eac5e971aece99c0e604a01ebf647421c55cdbdbd6b8a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B4%2C%22Ppcg7JD-B0Pdfk2XuWDp7qU_WK2VExi4%22%2C2592000%5D%22%3B%7D; advanced-frontend=am8083amk9b7khkq4nf7t8jn0r; _identity-backend=9969be0f702f40824c75078d6c7e75918cd25a0116b2da06f1786a96e62d9a37a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B4%2C%22Ppcg7JD-B0Pdfk2XuWDp7qU_WK2VExi4%22%2C2592000%5D%22%3B%7D; PHPSESSID=dfo59oftnhdk1euc8nmhbhfnmj; _identity=af4c8690e28834ef0f9a5a7dc9c3e886c02c95703d2cf83065b73e4b679e0a80a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A28%3A%22%5B%22100%22%2C%22test100key%22%2C2592000%5D%22%3B%7D; _csrf=d65c57e0d4241c949775c06995d385a05983d771e5fb418bbe6fb8abd81f7c57a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22kpsA86nu7wIr-_p0CjJmKbpb4geb0Y3b%22%3B%7D; _csrf-frontend=a459a6f4a197de847720ef2452f6998d135fae3863a8e015c23cf22f72898b80a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22w6-CtsMlOe5lF2tuvch26lbosvqUd-xi%22%3B%7D; advanced-backend=iek2v6rkvpu0stshoeijvgu9li; _csrf-backend=99cc096957d681c0923fb5fd438d6b6c226e64fd637bef33681e895ecfba9b6fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22QedcLh90zpy_GdfSrg9M8wHmKegZ2JuS%22%3B%7D'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'proxy-nokeepalive' => '1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/Managment/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1666551523.4343
+    'REQUEST_TIME' => 1666551523
+]
+2022-10-23 18:58:45 [::1][-][iek2v6rkvpu0stshoeijvgu9li][error][yii\base\InvalidConfigException] yii\base\InvalidConfigException: The table does not exist: {{%user}} in /var/www/html/Managment/vendor/yiisoft/yii2/db/ActiveRecord.php:442
+Stack trace:
+#0 /var/www/html/Managment/vendor/yiisoft/yii2/db/ActiveRecord.php(266): yii\db\ActiveRecord::getTableSchema()
+#1 /var/www/html/Managment/vendor/yiisoft/yii2/db/ActiveRecord.php(238): yii\db\ActiveRecord::filterValidColumnNames()
+#2 /var/www/html/Managment/vendor/yiisoft/yii2/db/ActiveRecord.php(195): yii\db\ActiveRecord::filterCondition()
+#3 /var/www/html/Managment/vendor/yiisoft/yii2/db/BaseActiveRecord.php(110): yii\db\ActiveRecord::findByCondition()
+#4 /var/www/html/Managment/common/models/User.php(67): yii\db\BaseActiveRecord::findOne()
+#5 /var/www/html/Managment/vendor/yiisoft/yii2/web/User.php(698): common\models\User::findIdentity()
+#6 /var/www/html/Managment/vendor/yiisoft/yii2/web/User.php(199): yii\web\User->renewAuthStatus()
+#7 /var/www/html/Managment/vendor/yiisoft/yii2/web/User.php(367): yii\web\User->getIdentity()
+#8 /var/www/html/Managment/vendor/yiisoft/yii2/base/Component.php(139): yii\web\User->getIsGuest()
+#9 /var/www/html/Managment/vendor/yiisoft/yii2-debug/src/panels/UserPanel.php(83): yii\base\Component->__get()
+#10 /var/www/html/Managment/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#11 [internal function]: yii\base\BaseObject->__construct()
+#12 /var/www/html/Managment/vendor/yiisoft/yii2/di/Container.php(419): ReflectionClass->newInstanceArgs()
+#13 /var/www/html/Managment/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build()
+#14 /var/www/html/Managment/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get()
+#15 /var/www/html/Managment/vendor/yiisoft/yii2-debug/src/Module.php(253): yii\BaseYii::createObject()
+#16 /var/www/html/Managment/vendor/yiisoft/yii2-debug/src/Module.php(225): yii\debug\Module->initPanels()
+#17 /var/www/html/Managment/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\debug\Module->init()
+#18 /var/www/html/Managment/vendor/yiisoft/yii2/base/Module.php(161): yii\base\BaseObject->__construct()
+#19 [internal function]: yii\base\Module->__construct()
+#20 /var/www/html/Managment/vendor/yiisoft/yii2/di/Container.php(411): ReflectionClass->newInstanceArgs()
+#21 /var/www/html/Managment/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build()
+#22 /var/www/html/Managment/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get()
+#23 /var/www/html/Managment/vendor/yiisoft/yii2/base/Module.php(445): yii\BaseYii::createObject()
+#24 /var/www/html/Managment/vendor/yiisoft/yii2/base/Application.php(313): yii\base\Module->getModule()
+#25 /var/www/html/Managment/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#26 /var/www/html/Managment/vendor/yiisoft/yii2/base/Application.php(271): yii\web\Application->bootstrap()
+#27 /var/www/html/Managment/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\base\Application->init()
+#28 /var/www/html/Managment/vendor/yiisoft/yii2/base/Application.php(204): yii\base\BaseObject->__construct()
+#29 /var/www/html/Managment/backend/web/index.php(18): yii\base\Application->__construct()
+#30 {main}
+2022-10-23 18:58:45 [::1][-][iek2v6rkvpu0stshoeijvgu9li][info][application] $_GET = [
+    'r' => 'gii'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'agree' => '373c6dbf02c370d830160c4dc9e4e84d6a2e82f50d71b3c400dc69dfb9a5aec6a:2:{i:0;s:5:\"agree\";i:1;s:2:\"on\";}'
+    '_identity-frontend' => '76f35adfd847ef7ffe93eac5e971aece99c0e604a01ebf647421c55cdbdbd6b8a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[4,\"Ppcg7JD-B0Pdfk2XuWDp7qU_WK2VExi4\",2592000]\";}'
+    'advanced-frontend' => 'am8083amk9b7khkq4nf7t8jn0r'
+    '_identity-backend' => '9969be0f702f40824c75078d6c7e75918cd25a0116b2da06f1786a96e62d9a37a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[4,\"Ppcg7JD-B0Pdfk2XuWDp7qU_WK2VExi4\",2592000]\";}'
+    'PHPSESSID' => 'dfo59oftnhdk1euc8nmhbhfnmj'
+    '_identity' => 'af4c8690e28834ef0f9a5a7dc9c3e886c02c95703d2cf83065b73e4b679e0a80a:2:{i:0;s:9:\"_identity\";i:1;s:28:\"[\"100\",\"test100key\",2592000]\";}'
+    '_csrf' => 'd65c57e0d4241c949775c06995d385a05983d771e5fb418bbe6fb8abd81f7c57a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"kpsA86nu7wIr-_p0CjJmKbpb4geb0Y3b\";}'
+    '_csrf-frontend' => 'a459a6f4a197de847720ef2452f6998d135fae3863a8e015c23cf22f72898b80a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"w6-CtsMlOe5lF2tuvch26lbosvqUd-xi\";}'
+    'advanced-backend' => 'iek2v6rkvpu0stshoeijvgu9li'
+    '_csrf-backend' => '99cc096957d681c0923fb5fd438d6b6c226e64fd637bef33681e895ecfba9b6fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"QedcLh90zpy_GdfSrg9M8wHmKegZ2JuS\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 4
+    '__authKey' => 'Ppcg7JD-B0Pdfk2XuWDp7qU_WK2VExi4'
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'SCRIPT_NAME' => '/Managment/backend/web/index.php'
+    'REQUEST_URI' => '/Managment/backend/web/?r=gii'
+    'QUERY_STRING' => 'r=gii'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '56862'
+    'SCRIPT_FILENAME' => '/var/www/html/Managment/backend/web/index.php'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html/'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => '/var/www/html/'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.52 (Ubuntu)'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.52 (Ubuntu) Server at localhost Port 80</address>
+'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'HTTP_COOKIE' => 'agree=373c6dbf02c370d830160c4dc9e4e84d6a2e82f50d71b3c400dc69dfb9a5aec6a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22agree%22%3Bi%3A1%3Bs%3A2%3A%22on%22%3B%7D; _identity-frontend=76f35adfd847ef7ffe93eac5e971aece99c0e604a01ebf647421c55cdbdbd6b8a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B4%2C%22Ppcg7JD-B0Pdfk2XuWDp7qU_WK2VExi4%22%2C2592000%5D%22%3B%7D; advanced-frontend=am8083amk9b7khkq4nf7t8jn0r; _identity-backend=9969be0f702f40824c75078d6c7e75918cd25a0116b2da06f1786a96e62d9a37a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B4%2C%22Ppcg7JD-B0Pdfk2XuWDp7qU_WK2VExi4%22%2C2592000%5D%22%3B%7D; PHPSESSID=dfo59oftnhdk1euc8nmhbhfnmj; _identity=af4c8690e28834ef0f9a5a7dc9c3e886c02c95703d2cf83065b73e4b679e0a80a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A28%3A%22%5B%22100%22%2C%22test100key%22%2C2592000%5D%22%3B%7D; _csrf=d65c57e0d4241c949775c06995d385a05983d771e5fb418bbe6fb8abd81f7c57a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22kpsA86nu7wIr-_p0CjJmKbpb4geb0Y3b%22%3B%7D; _csrf-frontend=a459a6f4a197de847720ef2452f6998d135fae3863a8e015c23cf22f72898b80a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22w6-CtsMlOe5lF2tuvch26lbosvqUd-xi%22%3B%7D; advanced-backend=iek2v6rkvpu0stshoeijvgu9li; _csrf-backend=99cc096957d681c0923fb5fd438d6b6c226e64fd637bef33681e895ecfba9b6fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22QedcLh90zpy_GdfSrg9M8wHmKegZ2JuS%22%3B%7D'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'proxy-nokeepalive' => '1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/Managment/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1666551525.3268
+    'REQUEST_TIME' => 1666551525
+]
+2022-10-23 18:59:07 [::1][-][iek2v6rkvpu0stshoeijvgu9li][error][yii\base\InvalidConfigException] yii\base\InvalidConfigException: The table does not exist: {{%user}} in /var/www/html/Managment/vendor/yiisoft/yii2/db/ActiveRecord.php:442
+Stack trace:
+#0 /var/www/html/Managment/vendor/yiisoft/yii2/db/ActiveRecord.php(266): yii\db\ActiveRecord::getTableSchema()
+#1 /var/www/html/Managment/vendor/yiisoft/yii2/db/ActiveRecord.php(238): yii\db\ActiveRecord::filterValidColumnNames()
+#2 /var/www/html/Managment/vendor/yiisoft/yii2/db/ActiveRecord.php(195): yii\db\ActiveRecord::filterCondition()
+#3 /var/www/html/Managment/vendor/yiisoft/yii2/db/BaseActiveRecord.php(110): yii\db\ActiveRecord::findByCondition()
+#4 /var/www/html/Managment/common/models/User.php(67): yii\db\BaseActiveRecord::findOne()
+#5 /var/www/html/Managment/vendor/yiisoft/yii2/web/User.php(698): common\models\User::findIdentity()
+#6 /var/www/html/Managment/vendor/yiisoft/yii2/web/User.php(199): yii\web\User->renewAuthStatus()
+#7 /var/www/html/Managment/vendor/yiisoft/yii2/web/User.php(367): yii\web\User->getIdentity()
+#8 /var/www/html/Managment/vendor/yiisoft/yii2/base/Component.php(139): yii\web\User->getIsGuest()
+#9 /var/www/html/Managment/vendor/yiisoft/yii2-debug/src/panels/UserPanel.php(83): yii\base\Component->__get()
+#10 /var/www/html/Managment/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#11 [internal function]: yii\base\BaseObject->__construct()
+#12 /var/www/html/Managment/vendor/yiisoft/yii2/di/Container.php(419): ReflectionClass->newInstanceArgs()
+#13 /var/www/html/Managment/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build()
+#14 /var/www/html/Managment/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get()
+#15 /var/www/html/Managment/vendor/yiisoft/yii2-debug/src/Module.php(253): yii\BaseYii::createObject()
+#16 /var/www/html/Managment/vendor/yiisoft/yii2-debug/src/Module.php(225): yii\debug\Module->initPanels()
+#17 /var/www/html/Managment/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\debug\Module->init()
+#18 /var/www/html/Managment/vendor/yiisoft/yii2/base/Module.php(161): yii\base\BaseObject->__construct()
+#19 [internal function]: yii\base\Module->__construct()
+#20 /var/www/html/Managment/vendor/yiisoft/yii2/di/Container.php(411): ReflectionClass->newInstanceArgs()
+#21 /var/www/html/Managment/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build()
+#22 /var/www/html/Managment/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get()
+#23 /var/www/html/Managment/vendor/yiisoft/yii2/base/Module.php(445): yii\BaseYii::createObject()
+#24 /var/www/html/Managment/vendor/yiisoft/yii2/base/Application.php(313): yii\base\Module->getModule()
+#25 /var/www/html/Managment/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#26 /var/www/html/Managment/vendor/yiisoft/yii2/base/Application.php(271): yii\web\Application->bootstrap()
+#27 /var/www/html/Managment/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\base\Application->init()
+#28 /var/www/html/Managment/vendor/yiisoft/yii2/base/Application.php(204): yii\base\BaseObject->__construct()
+#29 /var/www/html/Managment/backend/web/index.php(18): yii\base\Application->__construct()
+#30 {main}
+2022-10-23 18:59:07 [::1][-][iek2v6rkvpu0stshoeijvgu9li][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'agree' => '373c6dbf02c370d830160c4dc9e4e84d6a2e82f50d71b3c400dc69dfb9a5aec6a:2:{i:0;s:5:\"agree\";i:1;s:2:\"on\";}'
+    '_identity-frontend' => '76f35adfd847ef7ffe93eac5e971aece99c0e604a01ebf647421c55cdbdbd6b8a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[4,\"Ppcg7JD-B0Pdfk2XuWDp7qU_WK2VExi4\",2592000]\";}'
+    'advanced-frontend' => 'am8083amk9b7khkq4nf7t8jn0r'
+    '_identity-backend' => '9969be0f702f40824c75078d6c7e75918cd25a0116b2da06f1786a96e62d9a37a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[4,\"Ppcg7JD-B0Pdfk2XuWDp7qU_WK2VExi4\",2592000]\";}'
+    'PHPSESSID' => 'dfo59oftnhdk1euc8nmhbhfnmj'
+    '_identity' => 'af4c8690e28834ef0f9a5a7dc9c3e886c02c95703d2cf83065b73e4b679e0a80a:2:{i:0;s:9:\"_identity\";i:1;s:28:\"[\"100\",\"test100key\",2592000]\";}'
+    '_csrf' => 'd65c57e0d4241c949775c06995d385a05983d771e5fb418bbe6fb8abd81f7c57a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"kpsA86nu7wIr-_p0CjJmKbpb4geb0Y3b\";}'
+    '_csrf-frontend' => 'a459a6f4a197de847720ef2452f6998d135fae3863a8e015c23cf22f72898b80a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"w6-CtsMlOe5lF2tuvch26lbosvqUd-xi\";}'
+    'advanced-backend' => 'iek2v6rkvpu0stshoeijvgu9li'
+    '_csrf-backend' => '99cc096957d681c0923fb5fd438d6b6c226e64fd637bef33681e895ecfba9b6fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"QedcLh90zpy_GdfSrg9M8wHmKegZ2JuS\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 4
+    '__authKey' => 'Ppcg7JD-B0Pdfk2XuWDp7qU_WK2VExi4'
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'SCRIPT_NAME' => '/Managment/backend/web/index.php'
+    'REQUEST_URI' => '/Managment/backend/web/'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '56864'
+    'SCRIPT_FILENAME' => '/var/www/html/Managment/backend/web/index.php'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html/'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => '/var/www/html/'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.52 (Ubuntu)'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.52 (Ubuntu) Server at localhost Port 80</address>
+'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'HTTP_COOKIE' => 'agree=373c6dbf02c370d830160c4dc9e4e84d6a2e82f50d71b3c400dc69dfb9a5aec6a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22agree%22%3Bi%3A1%3Bs%3A2%3A%22on%22%3B%7D; _identity-frontend=76f35adfd847ef7ffe93eac5e971aece99c0e604a01ebf647421c55cdbdbd6b8a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B4%2C%22Ppcg7JD-B0Pdfk2XuWDp7qU_WK2VExi4%22%2C2592000%5D%22%3B%7D; advanced-frontend=am8083amk9b7khkq4nf7t8jn0r; _identity-backend=9969be0f702f40824c75078d6c7e75918cd25a0116b2da06f1786a96e62d9a37a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B4%2C%22Ppcg7JD-B0Pdfk2XuWDp7qU_WK2VExi4%22%2C2592000%5D%22%3B%7D; PHPSESSID=dfo59oftnhdk1euc8nmhbhfnmj; _identity=af4c8690e28834ef0f9a5a7dc9c3e886c02c95703d2cf83065b73e4b679e0a80a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A28%3A%22%5B%22100%22%2C%22test100key%22%2C2592000%5D%22%3B%7D; _csrf=d65c57e0d4241c949775c06995d385a05983d771e5fb418bbe6fb8abd81f7c57a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22kpsA86nu7wIr-_p0CjJmKbpb4geb0Y3b%22%3B%7D; _csrf-frontend=a459a6f4a197de847720ef2452f6998d135fae3863a8e015c23cf22f72898b80a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22w6-CtsMlOe5lF2tuvch26lbosvqUd-xi%22%3B%7D; advanced-backend=iek2v6rkvpu0stshoeijvgu9li; _csrf-backend=99cc096957d681c0923fb5fd438d6b6c226e64fd637bef33681e895ecfba9b6fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22QedcLh90zpy_GdfSrg9M8wHmKegZ2JuS%22%3B%7D'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'proxy-nokeepalive' => '1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/Managment/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1666551547.8926
+    'REQUEST_TIME' => 1666551547
+]
+2022-10-23 18:59:39 [::1][-][iek2v6rkvpu0stshoeijvgu9li][error][yii\base\InvalidConfigException] yii\base\InvalidConfigException: The table does not exist: {{%user}} in /var/www/html/Managment/vendor/yiisoft/yii2/db/ActiveRecord.php:442
+Stack trace:
+#0 /var/www/html/Managment/vendor/yiisoft/yii2/db/ActiveRecord.php(266): yii\db\ActiveRecord::getTableSchema()
+#1 /var/www/html/Managment/vendor/yiisoft/yii2/db/ActiveRecord.php(238): yii\db\ActiveRecord::filterValidColumnNames()
+#2 /var/www/html/Managment/vendor/yiisoft/yii2/db/ActiveRecord.php(195): yii\db\ActiveRecord::filterCondition()
+#3 /var/www/html/Managment/vendor/yiisoft/yii2/db/BaseActiveRecord.php(110): yii\db\ActiveRecord::findByCondition()
+#4 /var/www/html/Managment/common/models/User.php(67): yii\db\BaseActiveRecord::findOne()
+#5 /var/www/html/Managment/vendor/yiisoft/yii2/web/User.php(698): common\models\User::findIdentity()
+#6 /var/www/html/Managment/vendor/yiisoft/yii2/web/User.php(199): yii\web\User->renewAuthStatus()
+#7 /var/www/html/Managment/vendor/yiisoft/yii2/web/User.php(367): yii\web\User->getIdentity()
+#8 /var/www/html/Managment/vendor/yiisoft/yii2/base/Component.php(139): yii\web\User->getIsGuest()
+#9 /var/www/html/Managment/vendor/yiisoft/yii2-debug/src/panels/UserPanel.php(83): yii\base\Component->__get()
+#10 /var/www/html/Managment/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#11 [internal function]: yii\base\BaseObject->__construct()
+#12 /var/www/html/Managment/vendor/yiisoft/yii2/di/Container.php(419): ReflectionClass->newInstanceArgs()
+#13 /var/www/html/Managment/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build()
+#14 /var/www/html/Managment/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get()
+#15 /var/www/html/Managment/vendor/yiisoft/yii2-debug/src/Module.php(253): yii\BaseYii::createObject()
+#16 /var/www/html/Managment/vendor/yiisoft/yii2-debug/src/Module.php(225): yii\debug\Module->initPanels()
+#17 /var/www/html/Managment/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\debug\Module->init()
+#18 /var/www/html/Managment/vendor/yiisoft/yii2/base/Module.php(161): yii\base\BaseObject->__construct()
+#19 [internal function]: yii\base\Module->__construct()
+#20 /var/www/html/Managment/vendor/yiisoft/yii2/di/Container.php(411): ReflectionClass->newInstanceArgs()
+#21 /var/www/html/Managment/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build()
+#22 /var/www/html/Managment/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get()
+#23 /var/www/html/Managment/vendor/yiisoft/yii2/base/Module.php(445): yii\BaseYii::createObject()
+#24 /var/www/html/Managment/vendor/yiisoft/yii2/base/Application.php(313): yii\base\Module->getModule()
+#25 /var/www/html/Managment/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#26 /var/www/html/Managment/vendor/yiisoft/yii2/base/Application.php(271): yii\web\Application->bootstrap()
+#27 /var/www/html/Managment/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\base\Application->init()
+#28 /var/www/html/Managment/vendor/yiisoft/yii2/base/Application.php(204): yii\base\BaseObject->__construct()
+#29 /var/www/html/Managment/backend/web/index.php(18): yii\base\Application->__construct()
+#30 {main}
+2022-10-23 18:59:39 [::1][-][iek2v6rkvpu0stshoeijvgu9li][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'agree' => '373c6dbf02c370d830160c4dc9e4e84d6a2e82f50d71b3c400dc69dfb9a5aec6a:2:{i:0;s:5:\"agree\";i:1;s:2:\"on\";}'
+    '_identity-frontend' => '76f35adfd847ef7ffe93eac5e971aece99c0e604a01ebf647421c55cdbdbd6b8a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[4,\"Ppcg7JD-B0Pdfk2XuWDp7qU_WK2VExi4\",2592000]\";}'
+    'advanced-frontend' => 'am8083amk9b7khkq4nf7t8jn0r'
+    '_identity-backend' => '9969be0f702f40824c75078d6c7e75918cd25a0116b2da06f1786a96e62d9a37a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[4,\"Ppcg7JD-B0Pdfk2XuWDp7qU_WK2VExi4\",2592000]\";}'
+    'PHPSESSID' => 'dfo59oftnhdk1euc8nmhbhfnmj'
+    '_identity' => 'af4c8690e28834ef0f9a5a7dc9c3e886c02c95703d2cf83065b73e4b679e0a80a:2:{i:0;s:9:\"_identity\";i:1;s:28:\"[\"100\",\"test100key\",2592000]\";}'
+    '_csrf' => 'd65c57e0d4241c949775c06995d385a05983d771e5fb418bbe6fb8abd81f7c57a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"kpsA86nu7wIr-_p0CjJmKbpb4geb0Y3b\";}'
+    'advanced-backend' => 'iek2v6rkvpu0stshoeijvgu9li'
+    '_csrf-backend' => '99cc096957d681c0923fb5fd438d6b6c226e64fd637bef33681e895ecfba9b6fa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"QedcLh90zpy_GdfSrg9M8wHmKegZ2JuS\";}'
+    '_csrf-frontend' => '993c011226582f4299d065a7bbda3bb8c822a5c8195f3a77ac8094b97440eed7a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"9Ek8qtpc3IznY2X2E2Q8SWjtJq8ZM9lM\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 4
+    '__authKey' => 'Ppcg7JD-B0Pdfk2XuWDp7qU_WK2VExi4'
+]
+
+$_SERVER = [
+    'USER' => 'www-data'
+    'HOME' => '/var/www'
+    'SCRIPT_NAME' => '/Managment/backend/web/index.php'
+    'REQUEST_URI' => '/Managment/backend/web/'
+    'QUERY_STRING' => ''
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '56876'
+    'SCRIPT_FILENAME' => '/var/www/html/Managment/backend/web/index.php'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html/'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => '/var/www/html/'
+    'REMOTE_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '::1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_SOFTWARE' => 'Apache/2.4.52 (Ubuntu)'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.52 (Ubuntu) Server at localhost Port 80</address>
+'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'HTTP_COOKIE' => 'agree=373c6dbf02c370d830160c4dc9e4e84d6a2e82f50d71b3c400dc69dfb9a5aec6a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22agree%22%3Bi%3A1%3Bs%3A2%3A%22on%22%3B%7D; _identity-frontend=76f35adfd847ef7ffe93eac5e971aece99c0e604a01ebf647421c55cdbdbd6b8a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B4%2C%22Ppcg7JD-B0Pdfk2XuWDp7qU_WK2VExi4%22%2C2592000%5D%22%3B%7D; advanced-frontend=am8083amk9b7khkq4nf7t8jn0r; _identity-backend=9969be0f702f40824c75078d6c7e75918cd25a0116b2da06f1786a96e62d9a37a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B4%2C%22Ppcg7JD-B0Pdfk2XuWDp7qU_WK2VExi4%22%2C2592000%5D%22%3B%7D; PHPSESSID=dfo59oftnhdk1euc8nmhbhfnmj; _identity=af4c8690e28834ef0f9a5a7dc9c3e886c02c95703d2cf83065b73e4b679e0a80a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A28%3A%22%5B%22100%22%2C%22test100key%22%2C2592000%5D%22%3B%7D; _csrf=d65c57e0d4241c949775c06995d385a05983d771e5fb418bbe6fb8abd81f7c57a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22kpsA86nu7wIr-_p0CjJmKbpb4geb0Y3b%22%3B%7D; advanced-backend=iek2v6rkvpu0stshoeijvgu9li; _csrf-backend=99cc096957d681c0923fb5fd438d6b6c226e64fd637bef33681e895ecfba9b6fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22QedcLh90zpy_GdfSrg9M8wHmKegZ2JuS%22%3B%7D; _csrf-frontend=993c011226582f4299d065a7bbda3bb8c822a5c8195f3a77ac8094b97440eed7a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%229Ek8qtpc3IznY2X2E2Q8SWjtJq8ZM9lM%22%3B%7D'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en'
+    'HTTP_SEC_GPC' => '1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_HOST' => 'localhost'
+    'proxy-nokeepalive' => '1'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/Managment/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1666551579.2489
+    'REQUEST_TIME' => 1666551579
+]
