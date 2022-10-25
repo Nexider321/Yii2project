@@ -17,14 +17,16 @@ Main Code in folder Frontend
 
 
 Instruction to try it on own machine
-1. you need setup setting for your host server apache or nginx by docs in yii2 ![](https://www.yiiframework.com/doc/guide/1.1/en/quickstart.apache-nginx-config)
-2. Clone this project by git clone https://github.com/Nexider321/Yii2project.git
-3. you need to create db 
-CREATE DATABASE `yii2advanced`
-    DEFAULT CHARACTER SET = 'utf8mb4';
+1. you need setup setting for your host server apache or nginx by docs in yii2 
+2. https://www.yiiframework.com/doc/guide/1.1/en/quickstart.apache-nginx-config
+3. Clone this project by git clone https://github.com/Nexider321/Yii2project.git
+4. you need to create db 
+`CREATE DATABASE `yii2advanced`
+    DEFAULT CHARACTER SET = 'utf8mb4';`
  in project you need connect to db settings in common/config/main-local.php you can change username or password if you need
 4. In project folder you need to type php init and select 0 and yes
-5. next to do is apply migrations php yii migrate/up
+5. `Composer install` `php yii migrate/up` type yes
+6. Check adress [localhost/http://localhost/Yii2project/frontend/web/](http://localhost/Yii2project/frontend/web/)
 
 
 Documentation is at [docs/guide/README.md](docs/guide/README.md).
