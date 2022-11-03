@@ -14,7 +14,7 @@ use yii\base\InvalidArgumentException;
  * GettextMessageSource represents a message source that is based on GNU Gettext.
  *
  * Each GettextMessageSource instance represents the message translations
- * for a single domain. And each message category represents a message context
+ * for a single domain. And each message categories represents a message context
  * in Gettext. Translated messages are stored as either a MO or PO file,
  * depending on the [[useMoFile]] property value.
  *
@@ -51,7 +51,7 @@ class GettextMessageSource extends MessageSource
 
 
     /**
-     * Loads the message translation for the specified $language and $category.
+     * Loads the message translation for the specified $language and $categories.
      * If translation for specific locale code such as `en-US` isn't found it
      * tries more generic `en`. When both are present, the `en-US` messages will be merged
      * over `en`. See [[loadFallbackMessages]] for details.
@@ -59,7 +59,7 @@ class GettextMessageSource extends MessageSource
      * load the messages for [[sourceLanguage]]. For example: [[sourceLanguage]] is `en-GB`,
      * $language is `en`. The method will load the messages for `en` and merge them over `en-GB`.
      *
-     * @param string $category the message category
+     * @param string $category the message categories
      * @param string $language the target language
      * @return array the loaded messages. The keys are original messages, and the values are translated messages.
      * @see loadFallbackMessages
@@ -78,7 +78,7 @@ class GettextMessageSource extends MessageSource
         } elseif ($fallbackSourceLanguage !== '' && $language === $fallbackSourceLanguage) {
             $messages = $this->loadFallbackMessages($category, $this->sourceLanguage, $messages, $messageFile);
         } elseif ($messages === null) {
-            Yii::error("The message file for category '$category' does not exist: $messageFile", __METHOD__);
+            Yii::error("The message file for categories '$category' does not exist: $messageFile", __METHOD__);
         }
 
         return (array) $messages;
@@ -86,9 +86,9 @@ class GettextMessageSource extends MessageSource
 
     /**
      * The method is normally called by [[loadMessages]] to load the fallback messages for the language.
-     * Method tries to load the $category messages for the $fallbackLanguage and adds them to the $messages array.
+     * Method tries to load the $categories messages for the $fallbackLanguage and adds them to the $messages array.
      *
-     * @param string $category the message category
+     * @param string $category the message categories
      * @param string $fallbackLanguage the target fallback language
      * @param array $messages the array of previously loaded translation messages.
      * The keys are original messages, and the values are the translated messages.
@@ -107,7 +107,7 @@ class GettextMessageSource extends MessageSource
             && $fallbackLanguage !== $this->sourceLanguage
             && strpos($this->sourceLanguage, $fallbackLanguage) !== 0
         ) {
-            Yii::error("The message file for category '$category' does not exist: $originalMessageFile "
+            Yii::error("The message file for categories '$category' does not exist: $originalMessageFile "
                 . "Fallback file does not exist as well: $fallbackMessageFile", __METHOD__);
         } elseif (empty($messages)) {
             return $fallbackMessages;
@@ -123,7 +123,7 @@ class GettextMessageSource extends MessageSource
     }
 
     /**
-     * Returns message file path for the specified language and category.
+     * Returns message file path for the specified language and categories.
      *
      * @param string $language the target language
      * @return string path to message file
@@ -145,10 +145,10 @@ class GettextMessageSource extends MessageSource
     }
 
     /**
-     * Loads the message translation for the specified language and category or returns null if file doesn't exist.
+     * Loads the message translation for the specified language and categories or returns null if file doesn't exist.
      *
      * @param string $messageFile path to message file
-     * @param string $category the message category
+     * @param string $category the message categories
      * @return array|null array of messages or null if file not found
      */
     protected function loadMessagesFromFile($messageFile, $category)

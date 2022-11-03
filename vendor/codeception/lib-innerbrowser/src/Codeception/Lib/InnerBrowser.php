@@ -1340,7 +1340,7 @@ class InnerBrowser extends Module implements Web, PageSourceSaver, ElementLocato
      * <?php
      * $I->sendAjaxPostRequest('/add-task', ['form' => [
      *     'task' => 'lorem ipsum',
-     *     'category' => 'miscellaneous',
+     *     'categories' => 'miscellaneous',
      * ]]);
      * ```
      */

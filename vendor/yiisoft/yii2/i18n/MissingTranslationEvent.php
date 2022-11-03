@@ -28,7 +28,7 @@ class MissingTranslationEvent extends Event
      */
     public $translatedMessage;
     /**
-     * @var string the category that the message belongs to
+     * @var string the categories that the message belongs to
      */
     public $category;
     /**

@@ -34,7 +34,7 @@ use yii\base\Component;
  * the second element the total time spent in SQL execution.
  * @property-read float $elapsedTime The total elapsed time in seconds for current request.
  * @property-read array $profiling The profiling results. Each element is an array consisting of these
- * elements: `info`, `category`, `timestamp`, `trace`, `level`, `duration`, `memory`, `memoryDiff`. The `memory`
+ * elements: `info`, `categories`, `timestamp`, `trace`, `level`, `duration`, `memory`, `memoryDiff`. The `memory`
  * and `memoryDiff` values are available since version 2.0.11.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
@@ -84,7 +84,7 @@ class Logger extends Component
      * [
      *   [0] => message (mixed, can be a string or some complex data, such as an exception object)
      *   [1] => level (integer)
-     *   [2] => category (string)
+     *   [2] => categories (string)
      *   [3] => timestamp (float, obtained by microtime(true))
      *   [4] => traces (array, debug backtrace, contains the application code call stacks)
      *   [5] => memory usage in bytes (int, obtained by memory_get_usage()), available since version 2.0.11.
@@ -142,7 +142,7 @@ class Logger extends Component
     }
 
     /**
-     * Logs a message with the given type and category.
+     * Logs a message with the given type and categories.
      * If [[traceLevel]] is greater than 0, additional call stack information about
      * the application code will be logged as well.
      * @param string|array $message the message to be logged. This can be a simple string or a more
@@ -150,7 +150,7 @@ class Logger extends Component
      * @param int $level the level of the message. This must be one of the following:
      * `Logger::LEVEL_ERROR`, `Logger::LEVEL_WARNING`, `Logger::LEVEL_INFO`, `Logger::LEVEL_TRACE`, `Logger::LEVEL_PROFILE`,
      * `Logger::LEVEL_PROFILE_BEGIN`, `Logger::LEVEL_PROFILE_END`.
-     * @param string $category the category of the message.
+     * @param string $category the categories of the message.
      */
     public function log($message, $level, $category = 'application')
     {
@@ -247,12 +247,12 @@ class Logger extends Component
      * results that you are interested in.
      *
      * @param array $categories list of categories that you are interested in.
-     * You can use an asterisk at the end of a category to do a prefix match.
+     * You can use an asterisk at the end of a categories to do a prefix match.
      * For example, 'yii\db\*' will match categories starting with 'yii\db\',
      * such as 'yii\db\Connection'.
      * @param array $excludeCategories list of categories that you want to exclude
      * @return array the profiling results. Each element is an array consisting of these elements:
-     * `info`, `category`, `timestamp`, `trace`, `level`, `duration`, `memory`, `memoryDiff`.
+     * `info`, `categories`, `timestamp`, `trace`, `level`, `duration`, `memory`, `memoryDiff`.
      * The `memory` and `memoryDiff` values are available since version 2.0.11.
      */
     public function getProfiling($categories = [], $excludeCategories = [])
@@ -268,8 +268,8 @@ class Logger extends Component
             foreach ($categories as $category) {
                 $prefix = rtrim($category, '*');
                 if (
-                    ($outerTimingItem['category'] === $category || $prefix !== $category)
-                    && strpos($outerTimingItem['category'], $prefix) === 0
+                    ($outerTimingItem['categories'] === $category || $prefix !== $category)
+                    && strpos($outerTimingItem['categories'], $prefix) === 0
                 ) {
                     $matched = true;
                     break;
@@ -282,8 +282,8 @@ class Logger extends Component
                     foreach ($timings as $innerIndex => $innerTimingItem) {
                         $currentIndex = $innerIndex;
                         if (
-                            ($innerTimingItem['category'] === $category || $prefix !== $category)
-                            && strpos($innerTimingItem['category'], $prefix) === 0
+                            ($innerTimingItem['categories'] === $category || $prefix !== $category)
+                            && strpos($innerTimingItem['categories'], $prefix) === 0
                         ) {
                             $matched = false;
                             break;
@@ -323,7 +323,7 @@ class Logger extends Component
      * Calculates the elapsed time for the given log messages.
      * @param array $messages the log messages obtained from profiling
      * @return array timings. Each element is an array consisting of these elements:
-     * `info`, `category`, `timestamp`, `trace`, `level`, `duration`, `memory`, `memoryDiff`.
+     * `info`, `categories`, `timestamp`, `trace`, `level`, `duration`, `memory`, `memoryDiff`.
      * The `memory` and `memoryDiff` values are available since version 2.0.11.
      */
     public function calculateTimings($messages)
@@ -342,7 +342,7 @@ class Logger extends Component
                 if (isset($stack[$hash])) {
                     $timings[$stack[$hash][6]] = [
                         'info' => $stack[$hash][0],
-                        'category' => $stack[$hash][2],
+                        'categories' => $stack[$hash][2],
                         'timestamp' => $stack[$hash][3],
                         'trace' => $stack[$hash][4],
                         'level' => count($stack) - 1,

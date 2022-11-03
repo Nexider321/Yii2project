@@ -23,7 +23,7 @@ use yii\base\Model;
  *     public function rules()
  *     {
  *         return [
- *             // checks if every category ID is an integer
+ *             // checks if every categories ID is an integer
  *             ['categoryIDs', 'each', 'rule' => ['integer']],
  *         ]
  *     }

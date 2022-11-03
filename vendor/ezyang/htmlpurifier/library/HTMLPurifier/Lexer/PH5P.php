@@ -2336,8 +2336,8 @@ class HTML5TreeConstructer
                                 break;
                             }
 
-                            /* 3. If node is not in the formatting category, and is
-                            not    in the phrasing category, and is not an address or
+                            /* 3. If node is not in the formatting categories, and is
+                            not    in the phrasing categories, and is not an address or
                             div element, then stop this algorithm. */
                             if ($cat !== self::FORMATTING && $cat !== self::PHRASING &&
                                 $node->tagName !== 'address' && $node->tagName !== 'div'
@@ -3300,7 +3300,7 @@ class HTML5TreeConstructer
 
                                 if ($category !== self::SPECIAL && $category !== self::SCOPING) {
                                     /* Otherwise, if node is in neither the formatting
-                                    category nor the phrasing category, then this is a
+                                    categories nor the phrasing categories, then this is a
                                     parse error. Stop this algorithm. The end tag token
                                     is ignored. */
                                     return false;

@@ -634,7 +634,7 @@ class Yii2 extends Framework implements ActiveRecord, MultiSession, PartedModule
      * Retrieves a record from the database
      *
      * ``` php
-     * $category = $I->grabRecord('app\models\User', array('name' => 'davert'));
+     * $categories = $I->grabRecord('app\models\User', array('name' => 'davert'));
      * ```
      *
      * @param $model

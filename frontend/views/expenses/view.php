@@ -32,9 +32,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'type_expense',
             'costs',
-            'worker.name',
-            'id_worker'
+            'categories.categoryName',
+
+
+
         ],
     ]) ?>
+
+
 
 </div>

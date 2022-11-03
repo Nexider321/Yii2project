@@ -19,8 +19,8 @@ class IncomesSearch extends Incomes
     public function rules()
     {
         return [
-            [['id', 'costs', 'id_worker'], 'integer'],
-            [['type_income', 'worker'], 'safe'],
+            [['id', 'costs', 'category_id'], 'integer'],
+            [['type_income', 'workers'], 'safe'],
         ];
     }
 
@@ -43,16 +43,16 @@ class IncomesSearch extends Incomes
     public function search($params)
     {
         $query = Incomes::find();
-        $query->joinWith(['worker']);
+        $query->joinWith(['workers']);
 
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
-        $dataProvider->sort->attributes['worker'] = [
-            'asc' => ['worker.name' => SORT_ASC],
-            'desc' => ['worker.name' => SORT_DESC],
+        $dataProvider->sort->attributes['workers'] = [
+            'asc' => ['workers.name' => SORT_ASC],
+            'desc' => ['workers.name' => SORT_DESC],
         ];
 
         $this->load($params);
@@ -72,11 +72,11 @@ class IncomesSearch extends Incomes
         $query->andFilterWhere([
 
             'costs' => $this->costs,
-            'id_worker' => $this->id_worker,
+
         ]);
 
         $query->andFilterWhere(['like', 'type_income', $this->type_income]);
-        $query->andFilterWhere(['like', 'worker.name', $this->worker]);
+        $query->andFilterWhere(['like', 'workers.name', $this->worker]);
 
         return $dataProvider;
     }

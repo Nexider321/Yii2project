@@ -36,7 +36,7 @@ class Search extends Base
     public function rules()
     {
         return [
-            [['category', 'duration'], 'safe'],
+            [['categories', 'duration'], 'safe'],
         ];
     }
 
@@ -63,7 +63,7 @@ class Search extends Base
         $dataProvider = new DataProvider($panel, [
             'allModels' => $models,
             'sort' => [
-                'attributes' => ['category', 'timestamp']
+                'attributes' => ['categories', 'timestamp']
             ],
         ]);
 
@@ -72,7 +72,7 @@ class Search extends Base
         }
 
         $filter = new Filter();
-        $this->addCondition($filter, 'category', true);
+        $this->addCondition($filter, 'categories', true);
         if ($this->duration > 0) {
             $filter->addMatcher('duration', new GreaterThanOrEqual(['value' => $this->duration / 1000]));
         }

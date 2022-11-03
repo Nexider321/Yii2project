@@ -399,8 +399,8 @@ class ActiveQuery extends Query implements ActiveQueryInterface
      *         $query->orderBy('item.name');
      *     }
      * ])->all();
-     * // find all orders that contain books of the category 'Science fiction', using the alias "b" for the books table
-     * Order::find()->joinWith(['books b'], true, 'INNER JOIN')->where(['b.category' => 'Science fiction'])->all();
+     * // find all orders that contain books of the categories 'Science fiction', using the alias "b" for the books table
+     * Order::find()->joinWith(['books b'], true, 'INNER JOIN')->where(['b.categories' => 'Science fiction'])->all();
      * ```
      *
      * The alias syntax is available since version 2.0.7.

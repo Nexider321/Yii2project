@@ -24,7 +24,7 @@ use yii\helpers\StringHelper;
 class ColumnSchemaBuilder extends BaseObject
 {
     // Internally used constants representing categories that abstract column types fall under.
-    // See [[$categoryMap]] for mappings of abstract column types to category.
+    // See [[$categoryMap]] for mappings of abstract column types to categories.
     // @since 2.0.8
     const CATEGORY_PK = 'pk';
     const CATEGORY_STRING = 'string';
@@ -443,8 +443,8 @@ class ColumnSchemaBuilder extends BaseObject
     }
 
     /**
-     * Returns the category of the column type.
-     * @return string a string containing the column type category name.
+     * Returns the categories of the column type.
+     * @return string a string containing the column type categories name.
      * @since 2.0.8
      */
     protected function getTypeCategory()

@@ -39,7 +39,7 @@ class Log extends Base
     public function rules()
     {
         return [
-            [['level', 'message', 'category'], 'safe'],
+            [['level', 'message', 'categories'], 'safe'],
         ];
     }
 
@@ -50,7 +50,7 @@ class Log extends Base
     {
         return [
             'level' => 'Level',
-            'category' => 'Category',
+            'categories' => 'Categories',
             'message' => 'Message',
             'time_since_previous' => 'Since previous',
         ];
@@ -75,7 +75,7 @@ class Log extends Base
                         'default' => SORT_DESC,
                     ],
                     'level',
-                    'category',
+                    'categories',
                     'message'
                 ],
                 'defaultOrder' => [
@@ -90,7 +90,7 @@ class Log extends Base
 
         $filter = new Filter();
         $this->addCondition($filter, 'level');
-        $this->addCondition($filter, 'category', true);
+        $this->addCondition($filter, 'categories', true);
         $this->addCondition($filter, 'message', true);
         $dataProvider->allModels = $filter->filter($models);
 

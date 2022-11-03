@@ -27,7 +27,7 @@ class m150207_210500_i18n_init extends Migration
 
         $this->createTable('{{%source_message}}', [
             'id' => $this->primaryKey(),
-            'category' => $this->string(),
+            'categories' => $this->string(),
             'message' => $this->text(),
         ], $tableOptions);
 
@@ -44,7 +44,7 @@ class m150207_210500_i18n_init extends Migration
             $onUpdateConstraint = 'NO ACTION';
         }
         $this->addForeignKey('fk_message_source_message', '{{%message}}', 'id', '{{%source_message}}', 'id', 'CASCADE', $onUpdateConstraint);
-        $this->createIndex('idx_source_message_category', '{{%source_message}}', 'category');
+        $this->createIndex('idx_source_message_category', '{{%source_message}}', 'categories');
         $this->createIndex('idx_message_language', '{{%message}}', 'language');
     }
 

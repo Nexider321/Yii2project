@@ -127,7 +127,7 @@ echo GridView::widget([
                 Logger::LEVEL_ERROR => ' Error ',
             ],
         ],
-        'category',
+        'categories',
         [
             'attribute' => 'message',
             'value' => static function ($data) use ($panel) {

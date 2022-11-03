@@ -28,19 +28,19 @@ class I18N extends Component
 {
     /**
      * @var array list of [[MessageSource]] configurations or objects. The array keys are message
-     * category patterns, and the array values are the corresponding [[MessageSource]] objects or the configurations
+     * categories patterns, and the array values are the corresponding [[MessageSource]] objects or the configurations
      * for creating the [[MessageSource]] objects.
      *
-     * The message category patterns can contain the wildcard `*` at the end to match multiple categories with the same prefix.
+     * The message categories patterns can contain the wildcard `*` at the end to match multiple categories with the same prefix.
      * For example, `app/*` matches both `app/cat1` and `app/cat2`.
      *
-     * The `*` category pattern will match all categories that do not match any other category patterns.
+     * The `*` categories pattern will match all categories that do not match any other categories patterns.
      *
      * This property may be modified on the fly by extensions who want to have their own message sources
      * registered under their own namespaces.
      *
-     * The category `yii` and `app` are always defined. The former refers to the messages used in the Yii core
-     * framework code, while the latter refers to the default message category for custom application code.
+     * The categories `yii` and `app` are always defined. The former refers to the messages used in the Yii core
+     * framework code, while the latter refers to the default message categories for custom application code.
      * By default, both of these categories use [[PhpMessageSource]] and the corresponding message files are
      * stored under `@yii/messages` and `@app/messages`, respectively.
      *
@@ -78,7 +78,7 @@ class I18N extends Component
      * After translation the message will be formatted using [[MessageFormatter]] if it contains
      * ICU message format and `$params` are not empty.
      *
-     * @param string $category the message category.
+     * @param string $category the message categories.
      * @param string $message the message to be translated.
      * @param array $params the parameters that will be used to replace the corresponding placeholders in the message.
      * @param string $language the language code (e.g. `en-US`, `en`).
@@ -162,10 +162,10 @@ class I18N extends Component
     }
 
     /**
-     * Returns the message source for the given category.
-     * @param string $category the category name.
-     * @return MessageSource the message source for the given category.
-     * @throws InvalidConfigException if there is no message source available for the specified category.
+     * Returns the message source for the given categories.
+     * @param string $category the categories name.
+     * @return MessageSource the message source for the given categories.
+     * @throws InvalidConfigException if there is no message source available for the specified categories.
      */
     public function getMessageSource($category)
     {
@@ -198,6 +198,6 @@ class I18N extends Component
             return $this->translations[$category] = $this->translations['*'] = Yii::createObject($source);
         }
 
-        throw new InvalidConfigException("Unable to locate message source for category '$category'.");
+        throw new InvalidConfigException("Unable to locate message source for categories '$category'.");
     }
 }

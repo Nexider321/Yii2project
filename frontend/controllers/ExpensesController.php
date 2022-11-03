@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use app\models\Categories;
 use app\models\Expenses;
 use frontend\models\ExpensesSearch;
 use yii\web\Controller;

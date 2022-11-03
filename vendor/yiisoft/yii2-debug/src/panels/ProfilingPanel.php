@@ -89,7 +89,7 @@ class ProfilingPanel extends Panel
             foreach ($timings as $seq => $profileTiming) {
                 $this->_models[] = [
                     'duration' => $profileTiming['duration'] * 1000, // in milliseconds
-                    'category' => $profileTiming['category'],
+                    'categories' => $profileTiming['categories'],
                     'info' => $profileTiming['info'],
                     'level' => $profileTiming['level'],
                     'timestamp' => $profileTiming['timestamp'] * 1000, //in milliseconds

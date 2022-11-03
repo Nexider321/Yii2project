@@ -72,14 +72,14 @@ class m141106_185632_log_init extends Migration
             $this->createTable($target->logTable, [
                 'id' => $this->bigPrimaryKey(),
                 'level' => $this->integer(),
-                'category' => $this->string(),
+                'categories' => $this->string(),
                 'log_time' => $this->double(),
                 'prefix' => $this->text(),
                 'message' => $this->text(),
             ], $tableOptions);
 
             $this->createIndex('idx_log_level', $target->logTable, 'level');
-            $this->createIndex('idx_log_category', $target->logTable, 'category');
+            $this->createIndex('idx_log_category', $target->logTable, 'categories');
         }
     }
 

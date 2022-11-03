@@ -138,7 +138,7 @@ class DbPanel extends Panel
     /**
      * Calculates given request profile timings.
      *
-     * @return array timings [token, category, timestamp, traces, nesting level, elapsed time]
+     * @return array timings [token, categories, timestamp, traces, nesting level, elapsed time]
      */
     public function calculateTimings()
     {

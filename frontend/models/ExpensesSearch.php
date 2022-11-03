@@ -21,7 +21,7 @@ class ExpensesSearch extends Expenses
     {
         return [
             [['id', 'costs'], 'integer'],
-            [['type_expense', 'worker'], 'safe'],
+            [['type_expense', 'workers'], 'safe'],
 
 
         ];
@@ -46,18 +46,18 @@ class ExpensesSearch extends Expenses
     public function search($params)
     {
         $query = Expenses::find();
-        $query->joinWith(['worker']);
+        $query->joinWith(['workers']);
 
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
-        $dataProvider->sort->attributes['worker'] = [
+        $dataProvider->sort->attributes['workers'] = [
             // The tables are the ones our relation are configured to
             // in my case they are prefixed with "tbl_"
-            'asc' => ['worker.name' => SORT_ASC],
-            'desc' => ['worker.name' => SORT_DESC],
+            'asc' => ['workers.name' => SORT_ASC],
+            'desc' => ['workers.name' => SORT_DESC],
         ];
 
         $this->load($params);
@@ -76,11 +76,11 @@ class ExpensesSearch extends Expenses
         $query->andFilterWhere([
 
             'costs' => $this->costs,
-            'id_worker' => $this->id_worker,
+            'category_id' => $this->category_id,
         ]);
 
         $query->andFilterWhere(['like', 'type_expense', $this->type_expense]);
-        $query->andFilterWhere(['like', 'worker.name', $this->worker]);
+        $query->andFilterWhere(['like', 'workers.name', $this->worker]);
 
         return $dataProvider;
     }

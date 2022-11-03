@@ -6,6 +6,7 @@ use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
 
+
 /** @var yii\web\View $this */
 /** @var frontend\models\ExpensesSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
@@ -22,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-    <?= Html::a('Workers crud', Url::toRoute( ['worker/']),['class' => 'btn btn-success'] ) ?>
+    <?= Html::a('Workers crud', Url::toRoute( ['workers/']),['class' => 'btn btn-success'] ) ?>
     <?= Html::a('Expenses create', Url::toRoute( ['expenses/create']),['class' => 'btn btn-success'] ) ?>
 
     <?= GridView::widget([
@@ -31,13 +32,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             [
-                'attribute' => 'worker',
-                'label' => 'worker',
-                'value' => 'worker.name'
+                'attribute' => 'categories',
+                'label' => 'categories',
+                'value' => 'categories.categoryName'
             ],
 
             'type_expense',
             'costs',
+
 
             [
                 'class' => ActionColumn::className(),
@@ -47,6 +49,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ],
     ]); ?>
+
 
 
 </div>

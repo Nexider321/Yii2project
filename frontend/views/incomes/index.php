@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-    <?= Html::a('Workers crud', Url::toRoute( ['worker/']),['class' => 'btn btn-success'] ) ?>
+    <?= Html::a('Workers crud', Url::toRoute( ['workers/']),['class' => 'btn btn-success'] ) ?>
     <?= Html::a('Incomes create', Url::toRoute( ['incomes/create']),['class' => 'btn btn-success'] ) ?>
 
     <?= GridView::widget([
@@ -32,9 +32,9 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             [
-            'attribute' => 'worker',
-            'label' => 'worker',
-            'value' => 'worker.name'
+                'attribute' => 'categories',
+                'label' => 'categories',
+                'value' => 'categories.categoryName'
             ],
 
             'type_income',
@@ -50,13 +50,5 @@ $this->params['breadcrumbs'][] = $this->title;
 
     ]); ?>
 
-    <?php foreach ($names as $name): ?>
 
-        <?= $name ['id'], " ", $name['name']?>
-
-    <?php endforeach;?>
-
-    <?php
-
-    ?>
 </div>

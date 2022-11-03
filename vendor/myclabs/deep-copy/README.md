@@ -219,10 +219,10 @@ use DeepCopy\Filter\KeepFilter;
 use DeepCopy\Matcher\PropertyMatcher;
 
 $copier = new DeepCopy();
-$copier->addFilter(new KeepFilter(), new PropertyMatcher('MyClass', 'category'));
+$copier->addFilter(new KeepFilter(), new PropertyMatcher('MyClass', 'categories'));
 
 $copy = $copier->copy($object);
-// $copy->category has not been touched
+// $copy->categories has not been touched
 ```
 
 

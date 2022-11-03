@@ -103,11 +103,11 @@ class DbMessageSource extends MessageSource
     }
 
     /**
-     * Loads the message translation for the specified language and category.
+     * Loads the message translation for the specified language and categories.
      * If translation for specific locale code such as `en-US` isn't found it
      * tries more generic `en`.
      *
-     * @param string $category the message category
+     * @param string $category the message categories
      * @param string $language the target language
      * @return array the loaded messages. The keys are original messages, and the values
      * are translated messages.
@@ -135,7 +135,7 @@ class DbMessageSource extends MessageSource
     /**
      * Loads the messages from database.
      * You may override this method to customize the message storage in the database.
-     * @param string $category the message category.
+     * @param string $category the message categories.
      * @param string $language the target language.
      * @return array the messages loaded from database.
      */
@@ -145,7 +145,7 @@ class DbMessageSource extends MessageSource
             ->from(['t1' => $this->sourceMessageTable, 't2' => $this->messageTable])
             ->where([
                 't1.id' => new Expression('[[t2.id]]'),
-                't1.category' => $category,
+                't1.categories' => $category,
                 't2.language' => $language,
             ]);
 
@@ -167,7 +167,7 @@ class DbMessageSource extends MessageSource
      * The method builds the [[Query]] object for the fallback language messages search.
      * Normally is called from [[loadMessagesFromDb]].
      *
-     * @param string $category the message category
+     * @param string $category the message categories
      * @param string $language the originally requested language
      * @param string $fallbackLanguage the target fallback language
      * @return Query
@@ -180,7 +180,7 @@ class DbMessageSource extends MessageSource
             ->from(['t1' => $this->sourceMessageTable, 't2' => $this->messageTable])
             ->where([
                 't1.id' => new Expression('[[t2.id]]'),
-                't1.category' => $category,
+                't1.categories' => $category,
                 't2.language' => $fallbackLanguage,
             ])->andWhere([
                 'NOT IN', 't2.id', (new Query())->select('[[id]]')->from($this->messageTable)->where(['language' => $language]),

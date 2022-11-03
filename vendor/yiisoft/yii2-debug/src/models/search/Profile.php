@@ -35,7 +35,7 @@ class Profile extends Base
     public function rules()
     {
         return [
-            [['category', 'info'], 'safe'],
+            [['categories', 'info'], 'safe'],
         ];
     }
 
@@ -45,7 +45,7 @@ class Profile extends Base
     public function attributeLabels()
     {
         return [
-            'category' => 'Category',
+            'categories' => 'Categories',
             'info' => 'Info',
         ];
     }
@@ -63,7 +63,7 @@ class Profile extends Base
             'allModels' => $models,
             'pagination' => false,
             'sort' => [
-                'attributes' => ['category', 'seq', 'duration', 'info'],
+                'attributes' => ['categories', 'seq', 'duration', 'info'],
                 'defaultOrder' => [
                     'duration' => SORT_DESC,
                 ],
@@ -75,7 +75,7 @@ class Profile extends Base
         }
 
         $filter = new Filter();
-        $this->addCondition($filter, 'category', true);
+        $this->addCondition($filter, 'categories', true);
         $this->addCondition($filter, 'info', true);
         $dataProvider->allModels = $filter->filter($models);
 

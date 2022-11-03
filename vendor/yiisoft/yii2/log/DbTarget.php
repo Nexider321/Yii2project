@@ -71,8 +71,8 @@ class DbTarget extends Target
         }
 
         $tableName = $this->db->quoteTableName($this->logTable);
-        $sql = "INSERT INTO $tableName ([[level]], [[category]], [[log_time]], [[prefix]], [[message]])
-                VALUES (:level, :category, :log_time, :prefix, :message)";
+        $sql = "INSERT INTO $tableName ([[level]], [[categories]], [[log_time]], [[prefix]], [[message]])
+                VALUES (:level, :categories, :log_time, :prefix, :message)";
         $command = $this->db->createCommand($sql);
         foreach ($this->messages as $message) {
             list($text, $level, $category, $timestamp) = $message;
@@ -86,7 +86,7 @@ class DbTarget extends Target
             }
             if ($command->bindValues([
                     ':level' => $level,
-                    ':category' => $category,
+                    ':categories' => $category,
                     ':log_time' => $timestamp,
                     ':prefix' => $this->getMessagePrefix($message),
                     ':message' => $text,

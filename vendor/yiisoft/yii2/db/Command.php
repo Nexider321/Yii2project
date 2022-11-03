@@ -1116,7 +1116,7 @@ class Command extends Component
     /**
      * Logs the current database query if query logging is enabled and returns
      * the profiling token if profiling is enabled.
-     * @param string $category the log category.
+     * @param string $category the log categories.
      * @return array array of two elements, the first is boolean of whether profiling is enabled or not.
      * The second is the rawSql if it has been created.
      */

@@ -349,9 +349,9 @@ EOD;
     protected function saveMessagesToDb($messages, $db, $sourceMessageTable, $messageTable, $removeUnused, $languages, $markUnused)
     {
         $currentMessages = [];
-        $rows = (new Query())->select(['id', 'category', 'message'])->from($sourceMessageTable)->all($db);
+        $rows = (new Query())->select(['id', 'categories', 'message'])->from($sourceMessageTable)->all($db);
         foreach ($rows as $row) {
-            $currentMessages[$row['category']][$row['id']] = $row['message'];
+            $currentMessages[$row['categories']][$row['id']] = $row['message'];
         }
 
         $currentLanguages = [];
@@ -397,7 +397,7 @@ EOD;
         foreach ($new as $category => $msgs) {
             foreach ($msgs as $msg) {
                 $savedFlag = true;
-                $lastPk = $db->schema->insert($sourceMessageTable, ['category' => $category, 'message' => $msg]);
+                $lastPk = $db->schema->insert($sourceMessageTable, ['categories' => $category, 'message' => $msg]);
                 foreach ($languages as $language) {
                     $db->createCommand()
                        ->insert($messageTable, ['id' => $lastPk['id'], 'language' => $language])
@@ -408,9 +408,9 @@ EOD;
 
         if (!empty($missingLanguages)) {
             $updatedMessages = [];
-            $rows = (new Query())->select(['id', 'category', 'message'])->from($sourceMessageTable)->all($db);
+            $rows = (new Query())->select(['id', 'categories', 'message'])->from($sourceMessageTable)->all($db);
             foreach ($rows as $row) {
-                $updatedMessages[$row['category']][$row['id']] = $row['message'];
+                $updatedMessages[$row['categories']][$row['id']] = $row['message'];
             }
             foreach ($updatedMessages as $category => $msgs) {
                 foreach ($msgs as $id => $msg) {
@@ -544,7 +544,7 @@ EOD;
                             // invalid call or dynamic call we can't extract
                             $line = Console::ansiFormat($this->getLine($buffer), [Console::FG_CYAN]);
                             $skipping = Console::ansiFormat('Skipping line', [Console::FG_YELLOW]);
-                            $this->stdout("$skipping $line. Make sure both category and message are static strings.\n");
+                            $this->stdout("$skipping $line. Make sure both categories and message are static strings.\n");
                         }
 
                         // prepare for the next match
@@ -585,14 +585,14 @@ EOD;
     }
 
     /**
-     * The method checks, whether the $category is ignored according to $ignoreCategories array.
+     * The method checks, whether the $categories is ignored according to $ignoreCategories array.
      *
      * Examples:
      *
-     * - `myapp` - will be ignored only `myapp` category;
+     * - `myapp` - will be ignored only `myapp` categories;
      * - `myapp*` - will be ignored by all categories beginning with `myapp` (`myapp`, `myapplication`, `myapprove`, `myapp/widgets`, `myapp.widgets`, etc).
      *
-     * @param string $category category that is checked
+     * @param string $category categories that is checked
      * @param array $ignoreCategories message categories to ignore.
      * @return bool
      * @since 2.0.7
@@ -679,14 +679,14 @@ EOD;
     }
 
     /**
-     * Writes category messages into PHP file.
+     * Writes categories messages into PHP file.
      *
      * @param array $messages
      * @param string $fileName name of the file to write to
      * @param bool $overwrite if existing file should be overwritten without backup
      * @param bool $removeUnused if obsolete translations should be removed
      * @param bool $sort if translations should be sorted
-     * @param string $category message category
+     * @param string $category message categories
      * @param bool $markUnused if obsolete translations should be marked
      * @return int exit code
      */
@@ -698,7 +698,7 @@ EOD;
             sort($messages);
             ksort($existingMessages);
             if (array_keys($existingMessages) === $messages && (!$sort || array_keys($rawExistingMessages) === $messages)) {
-                $this->stdout("Nothing new in \"$category\" category... Nothing to save.\n\n", Console::FG_GREEN);
+                $this->stdout("Nothing new in \"$category\" categories... Nothing to save.\n\n", Console::FG_GREEN);
                 return ExitCode::OK;
             }
             unset($rawExistingMessages);
@@ -793,7 +793,7 @@ EOD;
                 sort($msgs);
                 ksort($existingMessages);
                 if (array_keys($existingMessages) == $msgs) {
-                    $this->stdout("Nothing new in \"$category\" category...\n");
+                    $this->stdout("Nothing new in \"$category\" categories...\n");
 
                     sort($msgs);
                     foreach ($msgs as $message) {
@@ -845,7 +845,7 @@ EOD;
                 }
                 ksort($merged);
             }
-            $this->stdout("Category \"$category\" merged.\n");
+            $this->stdout("Categories \"$category\" merged.\n");
             $hasSomethingToWrite = true;
         }
         if ($hasSomethingToWrite) {
@@ -882,7 +882,7 @@ EOD;
             foreach ($msgs as $message) {
                 $merged[$category . chr(4) . $message] = '';
             }
-            $this->stdout("Category \"$category\" merged.\n");
+            $this->stdout("Categories \"$category\" merged.\n");
             $hasSomethingToWrite = true;
         }
         if ($hasSomethingToWrite) {

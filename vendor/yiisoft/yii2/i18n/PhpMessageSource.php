@@ -16,7 +16,7 @@ use yii\base\InvalidArgumentException;
  * PhpMessageSource uses PHP arrays to keep message translations.
  *
  * - Each PHP script contains one array which stores the message translations in one particular
- *   language and for a single message category;
+ *   language and for a single message categories;
  * - Each PHP script is saved as a file named as "[[basePath]]/LanguageID/CategoryName.php";
  * - Within each PHP script, the message translations are returned as an array like the following:
  *
@@ -27,7 +27,7 @@ use yii\base\InvalidArgumentException;
  * ];
  * ```
  *
- * You may use [[fileMap]] to customize the association between category names and the file names.
+ * You may use [[fileMap]] to customize the association between categories names and the file names.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
@@ -53,7 +53,7 @@ class PhpMessageSource extends MessageSource
 
 
     /**
-     * Loads the message translation for the specified $language and $category.
+     * Loads the message translation for the specified $language and $categories.
      * If translation for specific locale code such as `en-US` isn't found it
      * tries more generic `en`. When both are present, the `en-US` messages will be merged
      * over `en`. See [[loadFallbackMessages]] for details.
@@ -61,7 +61,7 @@ class PhpMessageSource extends MessageSource
      * load the messages for [[sourceLanguage]]. For example: [[sourceLanguage]] is `en-GB`,
      * $language is `en`. The method will load the messages for `en` and merge them over `en-GB`.
      *
-     * @param string $category the message category
+     * @param string $category the message categories
      * @param string $language the target language
      * @return array the loaded messages. The keys are original messages, and the values are the translated messages.
      * @see loadFallbackMessages
@@ -80,7 +80,7 @@ class PhpMessageSource extends MessageSource
         } elseif ($fallbackSourceLanguage !== '' && $language === $fallbackSourceLanguage) {
             $messages = $this->loadFallbackMessages($category, $this->sourceLanguage, $messages, $messageFile);
         } elseif ($messages === null) {
-            Yii::warning("The message file for category '$category' does not exist: $messageFile", __METHOD__);
+            Yii::warning("The message file for categories '$category' does not exist: $messageFile", __METHOD__);
         }
 
         return (array) $messages;
@@ -88,9 +88,9 @@ class PhpMessageSource extends MessageSource
 
     /**
      * The method is normally called by [[loadMessages]] to load the fallback messages for the language.
-     * Method tries to load the $category messages for the $fallbackLanguage and adds them to the $messages array.
+     * Method tries to load the $categories messages for the $fallbackLanguage and adds them to the $messages array.
      *
-     * @param string $category the message category
+     * @param string $category the message categories
      * @param string $fallbackLanguage the target fallback language
      * @param array $messages the array of previously loaded translation messages.
      * The keys are original messages, and the values are the translated messages.
@@ -109,7 +109,7 @@ class PhpMessageSource extends MessageSource
             && $fallbackLanguage !== $this->sourceLanguage
             && strpos($this->sourceLanguage, $fallbackLanguage) !== 0
         ) {
-            Yii::error("The message file for category '$category' does not exist: $originalMessageFile "
+            Yii::error("The message file for categories '$category' does not exist: $originalMessageFile "
                 . "Fallback file does not exist as well: $fallbackMessageFile", __METHOD__);
         } elseif (empty($messages)) {
             return $fallbackMessages;
@@ -125,9 +125,9 @@ class PhpMessageSource extends MessageSource
     }
 
     /**
-     * Returns message file path for the specified language and category.
+     * Returns message file path for the specified language and categories.
      *
-     * @param string $category the message category
+     * @param string $category the message categories
      * @param string $language the target language
      * @return string path to message file
      */
@@ -148,7 +148,7 @@ class PhpMessageSource extends MessageSource
     }
 
     /**
-     * Loads the message translation for the specified language and category or returns null if file doesn't exist.
+     * Loads the message translation for the specified language and categories or returns null if file doesn't exist.
      *
      * @param string $messageFile path to message file
      * @return array|null array of messages or null if file not found

@@ -293,11 +293,11 @@ class Sort extends BaseObject
      * or the attribute name prefixed with `-` for descending.
      *
      * For example the following return value will result in ascending sort by
-     * `category` and descending sort by `created_at`:
+     * `categories` and descending sort by `created_at`:
      *
      * ```php
      * [
-     *     'category',
+     *     'categories',
      *     '-created_at'
      * ]
      * ```

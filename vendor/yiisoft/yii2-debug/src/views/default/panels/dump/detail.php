@@ -17,7 +17,7 @@ echo GridView::widget([
     'filterModel' => $searchModel,
     'filterUrl' => $panel->getUrl(),
     'columns' => [
-        'category',
+        'categories',
         [
             'attribute' => 'message',
             'value' => function ($data) use ($panel) {

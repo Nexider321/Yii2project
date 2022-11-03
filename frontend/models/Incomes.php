@@ -12,7 +12,7 @@ use Yii;
  * @property int|null $costs
  * @property int|null $id_worker
  *
- * @property Worker $worker
+ * @property Workers $workers
  */
 class Incomes extends \yii\db\ActiveRecord
 {
@@ -30,11 +30,11 @@ class Incomes extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['costs', 'id_worker'], 'required'],
-            [['costs', 'id_worker'], 'integer'],
+            [['costs', 'category_id'], 'required'],
+            [['costs', 'category_id'], 'integer'],
             [['type_income'], 'required'],
             [['type_income'], 'string', 'max' => 32],
-            [['id_worker'], 'exist', 'skipOnError' => true, 'targetClass' => Worker::class, 'targetAttribute' => ['id_worker' => 'id']],
+
         ];
     }
 
@@ -47,17 +47,22 @@ class Incomes extends \yii\db\ActiveRecord
             'id' => 'ID',
             'type_income' => 'Type Income',
             'costs' => 'Costs',
-            'id_worker' => 'Id Worker',
+            'category_id' => 'Categories',
         ];
     }
 
     /**
-     * Gets query for [[Worker]].
+     * Gets query for [[Workers]].
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getWorker()
+    public function getWorkers()
     {
-        return $this->hasOne(Worker::class, ['id' => 'id_worker']);
+        return $this->hasOne(Workers::class, ['id' => 'category_id']);
+    }
+    public function getCategories()
+    {
+        return $this->hasOne(Categories::class, ['id' => 'category_id']);
+
     }
 }

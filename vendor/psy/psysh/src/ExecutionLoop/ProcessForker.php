@@ -216,7 +216,7 @@ class ProcessForker extends AbstractListener
      * Create a savegame fork.
      *
      * The savegame contains the current execution state, and can be resumed in
-     * the event that the worker dies unexpectedly (for example, by encountering
+     * the event that the workers dies unexpectedly (for example, by encountering
      * a PHP fatal error).
      */
     private function createSavegame()
@@ -231,12 +231,12 @@ class ProcessForker extends AbstractListener
             // we're the savegame now... let's wait and see what happens
             \pcntl_waitpid($pid, $status);
 
-            // worker exited cleanly, let's bail
+            // workers exited cleanly, let's bail
             if (!\pcntl_wexitstatus($status)) {
                 \posix_kill(\posix_getpid(), \SIGKILL);
             }
 
-            // worker didn't exit cleanly, we'll need to have another go
+            // workers didn't exit cleanly, we'll need to have another go
             $this->createSavegame();
         }
     }

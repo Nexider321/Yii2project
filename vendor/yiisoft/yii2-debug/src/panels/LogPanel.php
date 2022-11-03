@@ -97,7 +97,7 @@ class LogPanel extends Panel
                     'id' => $id,
                     'message' => $message[0],
                     'level' => $message[1],
-                    'category' => $message[2],
+                    'categories' => $message[2],
                     'time' => $message[3] * 1000, // time in milliseconds
                     'time_of_previous' => $previousTime * 1000, // time in milliseconds
                     'time_since_previous' => $message[3] - $previousTime,

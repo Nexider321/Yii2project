@@ -34,7 +34,7 @@ TimelineAsset::register($this);
     'size' => '3',
     'class' => 'form-control form-control-sm'
 ])->hint('ms', ['tag' => 'span']);?>
-<?=$form->field($searchModel, 'category', [
+<?=$form->field($searchModel, 'categories', [
     'options' => ['class' => ['form-group', 'duration']]
 ])->textInput(['class' => 'form-control form-control-sm']);?>
 
@@ -102,7 +102,7 @@ TimelineAsset::register($this);
                               style="height: <?= StringHelper::normalizeNumber($model['child'] * 21) ?>px; margin-left: <?= StringHelper::normalizeNumber($model['css']['left']) ?>%"></span>
                     <?php endif; ?>
                     <?= Html::tag('a', '
-                        <span class="category">' . Html::encode($model['category']) . ' <span>' . sprintf('%.1f ms',
+                        <span class="categories">' . Html::encode($model['categories']) . ' <span>' . sprintf('%.1f ms',
                             $model['duration']) . '</span>' . $memory . '</span>', [
                         'tabindex' => $key + 1,
                         'title' => $model['info'],

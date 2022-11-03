@@ -32,8 +32,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'type_income',
             'costs',
-            'worker.name',
-            'id_worker'
+            'categories.categoryName',
+
         ],
     ]) ?>
 

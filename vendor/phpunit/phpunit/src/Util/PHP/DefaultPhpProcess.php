@@ -106,7 +106,7 @@ class DefaultPhpProcess extends AbstractPhpProcess
 
         if (!is_resource($process)) {
             throw new Exception(
-                'Unable to spawn worker process'
+                'Unable to spawn workers process'
             );
         }
 

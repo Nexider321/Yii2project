@@ -65,7 +65,7 @@ echo GridView::widget([
                 'class' => 'sort-numerical'
             ]
         ],
-        'category',
+        'categories',
         [
             'attribute' => 'info',
             'value' => function ($data) {

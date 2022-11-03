@@ -21,7 +21,7 @@ use yii\web\Request;
  * to its [[levels]] and [[categories]] properties. It may also export the filtered
  * messages to specific destination defined by the target, such as emails, files.
  *
- * Level filter and category filter are combinatorial, i.e., only messages
+ * Level filter and categories filter are combinatorial, i.e., only messages
  * satisfying both filter conditions will be handled. Additionally, you
  * may specify [[except]] to exclude messages of certain categories.
  *
@@ -40,15 +40,15 @@ abstract class Target extends Component
 {
     /**
      * @var array list of message categories that this target is interested in. Defaults to empty, meaning all categories.
-     * You can use an asterisk at the end of a category so that the category may be used to
+     * You can use an asterisk at the end of a categories so that the categories may be used to
      * match those categories sharing the same common prefix. For example, 'yii\db\*' will match
      * categories starting with 'yii\db\', such as 'yii\db\Connection'.
      */
     public $categories = [];
     /**
      * @var array list of message categories that this target is NOT interested in. Defaults to empty, meaning no uninteresting messages.
-     * If this property is not empty, then any category listed here will be excluded from [[categories]].
-     * You can use an asterisk at the end of a category so that the category can be used to
+     * If this property is not empty, then any categories listed here will be excluded from [[categories]].
+     * You can use an asterisk at the end of a categories so that the categories can be used to
      * match those categories sharing the same common prefix. For example, 'yii\db\*' will match
      * categories starting with 'yii\db\', such as 'yii\db\Connection'.
      * @see categories

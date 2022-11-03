@@ -53,7 +53,7 @@ abstract class Generator extends Model
      */
     public $enableI18N = false;
     /**
-     * @var string the message category used by `Yii::t()` when `$enableI18N` is `true`, defaults to `app`.
+     * @var string the message categories used by `Yii::t()` when `$enableI18N` is `true`, defaults to `app`.
      */
     public $messageCategory = 'app';
 
@@ -96,7 +96,7 @@ abstract class Generator extends Model
         return [
             'template' => 'Template/view group',
             'enableI18N' => 'Enable I18N',
-            'messageCategory' => 'Message Category',
+            'messageCategory' => 'Message Categories',
         ];
     }
 
@@ -134,7 +134,7 @@ abstract class Generator extends Model
         return [
             'enableI18N' => 'This indicates whether the generator should generate strings using <code>Yii::t()</code> method.
                 Set this to <code>true</code> if you are planning to make your application translatable.',
-            'messageCategory' => 'This is the category used by <code>Yii::t()</code> in case you enable I18N.',
+            'messageCategory' => 'This is the categories used by <code>Yii::t()</code> in case you enable I18N.',
         ];
     }
 
@@ -393,15 +393,15 @@ abstract class Generator extends Model
     }
 
     /**
-     * Checks if message category is not empty when I18N is enabled.
+     * Checks if message categories is not empty when I18N is enabled.
      */
     public function validateMessageCategory()
     {
         if ($this->enableI18N) {
             if (empty($this->messageCategory)) {
-                $this->addError('messageCategory', "Message Category cannot be blank.");
+                $this->addError('messageCategory', "Message Categories cannot be blank.");
             } elseif (!preg_match('~\w+~', $this->messageCategory)) {
-                $this->addError('messageCategory', "Message Category is not valid. It should contain only alphanumeric characters and _.");
+                $this->addError('messageCategory', "Message Categories is not valid. It should contain only alphanumeric characters and _.");
             }
         }
     }

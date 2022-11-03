@@ -274,7 +274,7 @@ yii.gii = (function ($) {
                 $('#generator-queryclass').prop('disabled', $(this).is(':not(:checked)'));
             }).change();
 
-            // hide message category when I18N is disabled
+            // hide message categories when I18N is disabled
             $('form #generator-enablei18n').change(function () {
                 $('form .field-generator-messagecategory').toggle($(this).is(':checked'));
             }).change();

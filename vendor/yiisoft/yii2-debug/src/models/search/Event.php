@@ -66,7 +66,7 @@ class Event extends Base
             'allModels' => $models,
             'pagination' => false,
             'sort' => [
-                'attributes' => ['time', 'level', 'category', 'message'],
+                'attributes' => ['time', 'level', 'categories', 'message'],
                 'defaultOrder' => [
                     'time' => SORT_ASC,
                 ],

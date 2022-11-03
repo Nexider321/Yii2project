@@ -275,11 +275,11 @@ use Faker\Container\ContainerInterface;
  *
  * @property string $imageUrl
  *
- * @method string imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false)
+ * @method string imageUrl($width = 640, $height = 480, $categories = null, $randomize = true, $word = null, $gray = false)
  *
  * @property string $image
  *
- * @method string image($dir = null, $width = 640, $height = 480, $category = null, $fullPath = true, $randomize = true, $word = null, $gray = false)
+ * @method string image($dir = null, $width = 640, $height = 480, $categories = null, $fullPath = true, $randomize = true, $word = null, $gray = false)
  *
  * @property string $email
  *

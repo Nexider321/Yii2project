@@ -398,7 +398,7 @@ class BaseYii
      * a message when the application is in debug mode.
      * @param string|array $message the message to be logged. This can be a simple string or a more
      * complex data structure, such as an array.
-     * @param string $category the category of the message.
+     * @param string $category the categories of the message.
      * @since 2.0.14
      */
     public static function debug($message, $category = 'application')
@@ -412,7 +412,7 @@ class BaseYii
      * Alias of [[debug()]].
      * @param string|array $message the message to be logged. This can be a simple string or a more
      * complex data structure, such as an array.
-     * @param string $category the category of the message.
+     * @param string $category the categories of the message.
      * @deprecated since 2.0.14. Use [[debug()]] instead.
      */
     public static function trace($message, $category = 'application')
@@ -426,7 +426,7 @@ class BaseYii
      * during the execution of an application.
      * @param string|array $message the message to be logged. This can be a simple string or a more
      * complex data structure, such as an array.
-     * @param string $category the category of the message.
+     * @param string $category the categories of the message.
      */
     public static function error($message, $category = 'application')
     {
@@ -439,7 +439,7 @@ class BaseYii
      * can still continue.
      * @param string|array $message the message to be logged. This can be a simple string or a more
      * complex data structure, such as an array.
-     * @param string $category the category of the message.
+     * @param string $category the categories of the message.
      */
     public static function warning($message, $category = 'application')
     {
@@ -452,7 +452,7 @@ class BaseYii
      * something important (e.g. an administrator logs in).
      * @param string|array $message the message to be logged. This can be a simple string or a more
      * complex data structure, such as an array.
-     * @param string $category the category of the message.
+     * @param string $category the categories of the message.
      */
     public static function info($message, $category = 'application')
     {
@@ -462,7 +462,7 @@ class BaseYii
     /**
      * Marks the beginning of a code block for profiling.
      *
-     * This has to be matched with a call to [[endProfile]] with the same category name.
+     * This has to be matched with a call to [[endProfile]] with the same categories name.
      * The begin- and end- calls must also be properly nested. For example,
      *
      * ```php
@@ -474,7 +474,7 @@ class BaseYii
      * \Yii::endProfile('block1');
      * ```
      * @param string $token token for the code block
-     * @param string $category the category of this log message
+     * @param string $category the categories of this log message
      * @see endProfile()
      */
     public static function beginProfile($token, $category = 'application')
@@ -484,9 +484,9 @@ class BaseYii
 
     /**
      * Marks the end of a code block for profiling.
-     * This has to be matched with a previous call to [[beginProfile]] with the same category name.
+     * This has to be matched with a previous call to [[beginProfile]] with the same categories name.
      * @param string $token token for the code block
-     * @param string $category the category of this log message
+     * @param string $category the categories of this log message
      * @see beginProfile()
      */
     public static function endProfile($token, $category = 'application')
@@ -512,7 +512,7 @@ class BaseYii
      *
      * This is a shortcut method of [[\yii\i18n\I18N::translate()]].
      *
-     * The translation will be conducted according to the message category and the target language will be used.
+     * The translation will be conducted according to the message categories and the target language will be used.
      *
      * You can add parameters to a translation message that will be substituted with the corresponding value after
      * translation. The format for this is to use curly brackets around the parameter name as you can see in the following example:
@@ -525,7 +525,7 @@ class BaseYii
      * Further formatting of message parameters is supported using the [PHP intl extensions](https://www.php.net/manual/en/intro.intl.php)
      * message formatter. See [[\yii\i18n\I18N::translate()]] for more details.
      *
-     * @param string $category the message category.
+     * @param string $category the message categories.
      * @param string $message the message to be translated.
      * @param array $params the parameters that will be used to replace the corresponding placeholders in the message.
      * @param string|null $language the language code (e.g. `en-US`, `en`). If this is null, the current

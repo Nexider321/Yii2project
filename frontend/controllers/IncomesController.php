@@ -3,7 +3,7 @@
 namespace frontend\controllers;
 
 use app\models\Incomes;
-use app\models\Worker;
+use app\models\Workers;
 use frontend\models\IncomesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -41,14 +41,14 @@ class IncomesController extends Controller
     {
         $searchModel = new IncomesSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
-        $names = Worker::find()->all();
+
 
 
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-            'names' => $names,
+
         ]);
     }
 
